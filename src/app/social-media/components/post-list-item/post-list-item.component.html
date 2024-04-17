@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <span highlight [color]="'yellow'">{{ postItem.title | titlecase }}</span>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <span>{{ postItem.createdDate | date }}</span>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <img
+      mat-card-image
+      *ngIf="postItem.imageUrl as imageUrl"
+      [src]="imageUrl"
+      [alt]="postItem.title"
+    />
+    <span class="post-content">{{ postItem.content | shorten : 200 }}</span>
+  </mat-card-content>
+  <mat-card-actions>
+    <app-comments
+      [comments]="postItem.comments"
+      (newComment)="onNewComment($event)"
+    ></app-comments>
+  </mat-card-actions>
+</mat-card>

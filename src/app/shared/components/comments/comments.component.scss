@@ -1,0 +1,18 @@
+mat-list-item {
+  border-bottom: thin solid #555;
+}
+.comments-row {
+  display: flex;
+  border-top: thin solid #555;
+  padding-top: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 90%;
+}
+.comment-date {
+  font-size: 0.7em;
+  color: #454444;
+}
